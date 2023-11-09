@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+menu
+: 안드로이드 앱에서 메뉴를 정의하는 루트 태그, 모든 메뉴 항목들 정의
+- 상단 액션 바(ActionBar), 툴바(ToolBar) 등에 표시할 메뉴 항목 정의
+ (여기선 하단 네비게이션 바로 사용됨)
+showAsAction: 메뉴 항목이 화면에 어떻게 표시될지 설정
+- always: 항상 표시됨
+title: 메뉴 항목의 텍스트 레이블 지정
+-->
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/homeFragment"
+        android:icon="@drawable/ic_bottom_home_no_select"
+        app:showAsAction="always"
+        android:enabled="true"
+        android:title="홈"
+        tools:ignore="AlwaysShowAction" />
+    <item
+        android:id="@+id/lookFragment"
+        android:icon="@drawable/ic_bottom_look_no_select"
+        app:showAsAction="always"
+        android:title="둘러보기" />
+    <item
+        android:id="@+id/searchFragment"
+        android:icon="@drawable/ic_bottom_search_no_select"
+        app:showAsAction="always"
+        android:title="검색" />
+    <item
+        android:id="@+id/lockerFragment"
+        android:icon="@drawable/ic_bottom_locker_no_select"
+        app:showAsAction="always"
+        android:title="보관함" />
+</menu>
