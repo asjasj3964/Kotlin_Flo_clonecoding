@@ -33,6 +33,7 @@ class SongActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivitySongBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        initSong()
         var title : String? = null
         var singer : String? = null
         if(intent.hasExtra("title") && intent.hasExtra("singer")){
@@ -80,13 +81,13 @@ class SongActivity : AppCompatActivity() {
     fun setPlayerStatus (isPlaying : Boolean){
         song.isPlaying = isPlaying
         timer.isPlaying = isPlaying
-        if(isPlaying){ // 재생중
-            binding.songMiniplayerIv.visibility = View.VISIBLE
-            binding.songPauseIv.visibility = View.GONE
-            mediaPlayer?.start()
-        } else { // 일시정지
+        if(isPlaying){ // 재생 중
             binding.songMiniplayerIv.visibility = View.GONE
             binding.songPauseIv.visibility = View.VISIBLE
+            mediaPlayer?.start()
+        } else { // 일시정지
+            binding.songMiniplayerIv.visibility = View.VISIBLE
+            binding.songPauseIv.visibility = View.GONE
             // 재생 중이 아닐 때, pause를 호출하면 에러가 발생함. 이를 방지하기 위한 조건문
             if(mediaPlayer?.isPlaying == true) {
                 mediaPlayer?.pause()
@@ -122,11 +123,11 @@ class SongActivity : AppCompatActivity() {
     }
     private fun startStopService() {
         if (isServiceRunning(ForegroundService::class.java)) {
-            Toast.makeText(this, "Foreground Service Stopped", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "일시 정지", Toast.LENGTH_SHORT).show()
             stopService(Intent(this, ForegroundService::class.java))
         }
         else {
-            Toast.makeText(this, "Foreground Service Started", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "재생", Toast.LENGTH_SHORT).show()
             startService(Intent(this, ForegroundService::class.java))
         }
     }

@@ -22,12 +22,12 @@ class SongFragment : Fragment() {
             binding.songMixoffTg.visibility = View.GONE
             binding.songMixonTg.visibility = View.VISIBLE
         }
-        /*
+        //
         binding.songMixonTg.setOnClickListener {
             binding.songMixoffTg.visibility = View.VISIBLE
             binding.songMixonTg.visibility = View.GONE
         }
-        */
+        //
         return binding.root
     }
 }
