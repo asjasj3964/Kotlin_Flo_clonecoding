@@ -24,9 +24,9 @@ class LockerAlbumRVAdapter (private val albumList: ArrayList<Album>) : RecyclerV
         holder.itemView.setOnClickListener {
             itemClickListener.onItemClick(albumList[position])
         }
-        /*holder.binding.itemLockerAlbumMoreIv.setOnClickListener {
+        holder.binding.itemLockerAlbumMoreIv.setOnClickListener {
             itemClickListener.onRemoveAlbum(position)
-        }*/
+        }
         val switch =  holder.binding.switchRV
         switch.isChecked = switchStatus[position]
         switch.setOnClickListener {
@@ -49,6 +49,7 @@ class LockerAlbumRVAdapter (private val albumList: ArrayList<Album>) : RecyclerV
     }
     interface OnItemClickListener {
         fun onItemClick(album : Album)
+        fun onRemoveAlbum(position: Int)
     }
     private lateinit var itemClickListener : OnItemClickListener
     fun setItemClickListener(onItemClickListener: OnItemClickListener) {

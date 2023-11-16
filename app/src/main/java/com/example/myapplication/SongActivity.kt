@@ -123,11 +123,11 @@ class SongActivity : AppCompatActivity() {
     }
     private fun startStopService() {
         if (isServiceRunning(ForegroundService::class.java)) {
-            Toast.makeText(this, "일시 정지", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Foreground Service Stopped", Toast.LENGTH_SHORT).show()
             stopService(Intent(this, ForegroundService::class.java))
         }
         else {
-            Toast.makeText(this, "재생", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Foreground Service Started", Toast.LENGTH_SHORT).show()
             startService(Intent(this, ForegroundService::class.java))
         }
     }

@@ -22,7 +22,7 @@ class ForegroundService : Service() {
     }
     @RequiresApi(Build.VERSION_CODES.O)
     private fun showNotification() {
-        // 알림을 클릭했을 때 이동할 화면을 지정
+        // 알림을 클릭했을 때 이동할 화면 지정
         val notificationIntent = Intent(this, SongActivity::class.java)
         val pendingIntent = PendingIntent.getActivity(
             this, 0, notificationIntent, PendingIntent.FLAG_IMMUTABLE

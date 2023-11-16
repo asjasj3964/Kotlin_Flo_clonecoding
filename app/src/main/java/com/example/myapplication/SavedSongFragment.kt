@@ -48,9 +48,9 @@ class SavedSongFragment : Fragment() {
             override fun onItemClick(album: Album) {
                 changeAlbumFragment(album)
             }
-            /*override fun onRemoveAlbum(position: Int) {
+            override fun onRemoveAlbum(position: Int) {
                 lockerAlbumRVAdapter.removeItem(position)
-            }*/
+            }
         })
         return binding.root
     }
